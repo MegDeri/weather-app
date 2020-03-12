@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-transform: uppercase;
+}
+
+.navMain {
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+}
