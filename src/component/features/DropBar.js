@@ -3,7 +3,7 @@ import { Button } from "reactstrap";
 
 const DropBar = props => (
   <form onSubmit={props.getWeather}>
-    <Button name="city">Click Tampere!</Button>
+    <Button >Click Tampere!</Button>
   </form>
 );
 
