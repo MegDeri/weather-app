@@ -1,3 +1,5 @@
+@import "../../styles/settings.scss";
+
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -6,6 +8,40 @@
 }
 
 .navMain {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $color-basic;
   margin-bottom: 20px;
+}
+
+.headerRow {
+  background-color: $color-primary;
+  justify-content: space-between;
+  display: flex;
+  font-family: $font-text;
+  color: $color-text-bright;
+}
+
+.right {
+  text-align: right;
+}
+
+.second {
+  display: block;
+  .navHeader {
+    font-family: $font-text;
+    color: $color-basic;
+    font-size: 23px;
+    text-align: center;
+    background-color: $color-background;
+    height: 80px;
+    min-height: 30px;
+  }
+}
+
+span .wifi {
+  font-size: 12px;
+}
+
+.dot {
+  font-size: 10px;
+  padding-bottom: 3.5px;
 }
