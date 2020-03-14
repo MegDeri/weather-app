@@ -6,38 +6,51 @@ import DropBar from "./component/features/DropBar";
 const API_KEY = "844e5ccfa57fee902cb9b1e8599d046a";
 
 class App extends React.Component {
-
-  state = {
-    factors: [],
-  }
-  getWeather = async (e) => {
-    e.preventDefault();
-    const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=Tampere&appid=${API_KEY}`
-    );
-    const data = await api_call.json();
-    console.log(data);
+  constructor(props) {
+    super(props);
+    this.state = {
+      cityId: '658225,655195,650225,634964&units=metric',
+      multi: 'group'
+    }
+    this.setSortOptions = this.setSortOptions.bind(this);
   }
 
 
 
-  // getWeather = e => {
+  // getWeather = async (e) => {
   //   e.preventDefault();
-  //   fetch(`api.openweathermap.org/data/2.5/weather?q=Tampere&appid=${API_KEY}`)
-  //     .then(function (response) {
-  //       return response.json();
-  //     })
-  //     .then(function (json) {
-  //       console.log(json);
+  //   const api_call = await fetch(
+  //     `http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}`
+  //   );
+  //   const data = await api_call.json();
+  //   console.log(data);
+  // }
 
-  //     });
-  // };
+  getWeather = e => {
+    e.preventDefault();
+    fetch(`http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+
+      });
+  };
+
+  setSortOptions({ currentTarget }) {
+    console.log(currentTarget.value)
+    this.setState({
+      cityId: currentTarget.id,
+      multi: currentTarget.value
+    })
+  }
 
   render() {
     return (
       <MainLayout>
         <div className="App">Hello!</div>
-        <DropBar getWeather={this.getWeather} />
+        <DropBar getWeather={this.getWeather} setSortOptions={this.setSortOptions} />
       </MainLayout>
     );
   }
