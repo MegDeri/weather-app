@@ -13,10 +13,8 @@ class App extends React.Component {
       multi: 'group'
     }
     this.setSortOptions = this.setSortOptions.bind(this);
+
   }
-
-
-
   // getWeather = async (e) => {
   //   e.preventDefault();
   //   const api_call = await fetch(
@@ -26,7 +24,7 @@ class App extends React.Component {
   //   console.log(data);
   // }
 
-  getWeather = e => {
+  getWeather = (e) => {
     e.preventDefault();
     fetch(`http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}`)
       .then(function (response) {
@@ -34,12 +32,11 @@ class App extends React.Component {
       })
       .then(function (data) {
         console.log(data);
-
       });
   };
 
   setSortOptions({ currentTarget }) {
-    console.log(currentTarget.value)
+    console.log(currentTarget.id)
     this.setState({
       cityId: currentTarget.id,
       multi: currentTarget.value
