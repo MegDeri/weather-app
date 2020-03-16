@@ -12,8 +12,7 @@ class App extends React.Component {
       cityId: '658225,655195,650225,634964&units=metric',
       multi: 'group'
     }
-    this.setSortOptions = this.setSortOptions.bind(this);
-
+    this.getWeather = this.getWeather.bind(this)
   }
   // getWeather = async (e) => {
   //   e.preventDefault();
@@ -24,24 +23,29 @@ class App extends React.Component {
   //   console.log(data);
   // }
 
-  getWeather = (e) => {
-    e.preventDefault();
+  getWeather = (currentTarget) => {
+    //currentTarget.preventDefault();
     fetch(`http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}`)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
         console.log(data);
+        this.setState({
+          cityId: currentTarget.id,
+          multi: currentTarget.value
+        })
+
       });
   };
 
-  setSortOptions({ currentTarget }) {
-    console.log(currentTarget.id)
-    this.setState({
-      cityId: currentTarget.id,
-      multi: currentTarget.value
-    })
-  }
+  // setSortOptions({ currentTarget }) {
+  //   console.log(currentTarget.id)
+  //   this.setState({
+  //     cityId: currentTarget.id,
+  //     multi: currentTarget.value
+  //   })
+  // }
 
   render() {
     return (
