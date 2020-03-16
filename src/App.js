@@ -12,46 +12,26 @@ class App extends React.Component {
       cityId: '658225,655195,650225,634964&units=metric',
       multi: 'group'
     }
-    this.getWeather = this.getWeather.bind(this)
   }
-  // getWeather = async (e) => {
-  //   e.preventDefault();
-  //   const api_call = await fetch(
-  //     `http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}`
-  //   );
-  //   const data = await api_call.json();
-  //   console.log(data);
-  // }
 
-  getWeather = (currentTarget) => {
-    //currentTarget.preventDefault();
-    fetch(`http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}`)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-        this.setState({
-          cityId: currentTarget.id,
-          multi: currentTarget.value
-        })
-
-      });
+  getWeather = ({ currentTarget }) => {
+    this.setState({
+      cityId: currentTarget.id,
+      multi: currentTarget.value
+    }, () => {
+      fetch(`http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        });
+    })
   };
-
-  // setSortOptions({ currentTarget }) {
-  //   console.log(currentTarget.id)
-  //   this.setState({
-  //     cityId: currentTarget.id,
-  //     multi: currentTarget.value
-  //   })
-  // }
 
   render() {
     return (
       <MainLayout>
         <div className="App">Hello!</div>
-        <DropBar getWeather={this.getWeather} setSortOptions={this.setSortOptions} />
+        <DropBar getWeather={this.getWeather} />
       </MainLayout>
     );
   }
