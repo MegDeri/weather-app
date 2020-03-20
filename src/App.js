@@ -17,7 +17,8 @@ class App extends React.Component {
       description: '',
       time: '',
       wind: '',
-      humidity: ''
+      humidity: '',
+      hours: [],
     }
   }
 
@@ -36,7 +37,39 @@ class App extends React.Component {
             description: data.list[0].weather.description,
             time: data.list[0].dt_txt,
             wind: data.list[0].wind.speed,
-            humidity: data.list[0].main.humidity
+            humidity: data.list[0].main.humidity,
+            hours: [
+              {
+                temp: data.list[1].main.temp,
+                time: data.list[1].dt_txt,
+                wind: data.list[1].wind.speed,
+                humidity: data.list[1].main.humidity,
+              },
+              {
+                temp: data.list[2].main.temp,
+                time: data.list[2].dt_txt,
+                wind: data.list[2].wind.speed,
+                humidity: data.list[2].main.humidity,
+              },
+              {
+                temp: data.list[3].main.temp,
+                time: data.list[3].dt_txt,
+                wind: data.list[3].wind.speed,
+                humidity: data.list[3].main.humidity,
+              },
+              {
+                temp: data.list[4].main.temp,
+                time: data.list[4].dt_txt,
+                wind: data.list[4].wind.speed,
+                humidity: data.list[4].main.humidity,
+              },
+              {
+                temp: data.list[5].main.temp,
+                time: data.list[5].dt_txt,
+                wind: data.list[5].wind.speed,
+                humidity: data.list[5].main.humidity,
+              }
+            ]
           })
         });
     })
@@ -54,6 +87,7 @@ class App extends React.Component {
           time={this.state.time}
           wind={this.state.wind}
           humidity={this.state.humidity}
+          hours={this.state.hours}
         />
       </MainLayout>
     );
