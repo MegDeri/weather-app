@@ -3,6 +3,7 @@ import "./App.scss";
 import { MainLayout } from "./component/layout/MainLayout";
 import DropBar from "./component/features/DropBar";
 import SingleCity from "./component/features/SingleCity"
+//658225,655195,650225,634964&units=metric, group
 //fetch(`http://api.openweathermap.org/data/2.5/forecast?id=658225`) http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}&units=metric
 const API_KEY = "844e5ccfa57fee902cb9b1e8599d046a";
 
@@ -10,8 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cityId: '658225,655195,650225,634964&units=metric',
-      multi: 'group',
+      cityId: '',
+      multi: '',
       temp: '',
       city: '',
       description: '',
@@ -34,7 +35,7 @@ class App extends React.Component {
           this.setState({
             city: data.city.name,
             temp: data.list[0].main.temp,
-            description: data.list[0].weather.description,
+            description: data.list[0].weather[0].description,
             time: data.list[0].dt_txt,
             wind: data.list[0].wind.speed,
             humidity: data.list[0].main.humidity,

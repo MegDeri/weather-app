@@ -1,0 +1,46 @@
+@import "../../styles/settings.scss";
+
+.temp-container {
+    padding: 0 10px;
+}
+
+.single-city {
+    display: flex;
+    background-color: $color-text-bright;
+    border-radius: 3px;
+}
+
+.hour {
+    display: flex;
+}
+
+.hour1 {
+    text-align: center;
+    min-height: 150px;
+    margin: 7px;
+    padding: 0;
+    background: $color-text-bright;
+}
+
+.upper {
+    background-color: $color-text-bright;
+    color: $color-lower-font;
+    min-height: 90px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    :first-child {
+        font-size: 13px;
+    }
+    :last-child {
+        font-size: 15px;
+    }
+}
+
+.lower {
+    background-color: $color-lower-background;
+    color: $color-lower-font;
+    font-size: 10px;
+    min-height: 60px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
