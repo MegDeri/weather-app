@@ -22,6 +22,11 @@
 
 .right {
   text-align: right;
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-right: 10px;
+  }
 }
 
 .second {

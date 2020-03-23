@@ -8,8 +8,8 @@ class HourWeather extends React.Component {
         return (
             <Col key={uuid()} md={2} className="hour1">
                 <div className="upper">
-                    <div>{time}</div>
-                    <div>{temp} &deg;C</div>
+                    <div>{time.slice(11, 16)}</div>
+                    <div><b>{Math.round(temp)} &deg;C</b></div>
                 </div>
                 <div className="lower">
                     <div>{wind} m/s</div>

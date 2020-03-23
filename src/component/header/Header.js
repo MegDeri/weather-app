@@ -26,7 +26,7 @@ export const Header = props => {
             </div>
           </Col>
           <Col className="right" xs={12} md={6}>
-            <div><FontAwesomeIcon icon={faBatteryFull} /> 10:41</div>
+            <p><FontAwesomeIcon icon={faBatteryFull} /> 10:41</p>
           </Col>
         </Row>
         <Row className="second">
