@@ -5,7 +5,7 @@ import "./SingleCity.scss";
 
 class SingleCity extends React.Component {
     render() {
-        const { hours, city, temp, description, time, wind, humidity } = this.props;
+        const { hours, city, temp, description, time, wind, humidity, icon } = this.props;
         const d = new Date(time)
         const nth = function (x) {
             let newX = parseInt(x);
@@ -27,7 +27,10 @@ class SingleCity extends React.Component {
                             <p>{city}</p>
                             <p>{`${description.charAt(0).toUpperCase()}${description.slice(1)}`}</p>
                         </Col>
-                        <Col className="main-right" md={6}>
+                        <Col className="main-right flexy" md={6}>
+                            <span>
+                                <img className="img-fluid" alt="cloud" src={`http://openweathermap.org/img/w/${icon}.png`} />
+                            </span>
                             <p><b>{Math.round(temp)} &deg;C</b></p>
                         </Col>
                     </Row>

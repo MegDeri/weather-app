@@ -40,6 +40,16 @@
 
 }
 
+.flexy {
+    display: flex;
+    justify-content: space-between;
+}
+
+span > img {
+    height: 70px;
+    width: 70px;
+}
+
 .single-city {
     background-color: $color-text-bright;
     border-radius: 3px;
