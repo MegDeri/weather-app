@@ -86,7 +86,6 @@ class App extends React.Component {
   render() {
     return (
       <MainLayout>
-        <div className="App">Hello!</div>
         <DropBar
           getWeather={this.getWeather} />
         <SingleCity

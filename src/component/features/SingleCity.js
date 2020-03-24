@@ -51,7 +51,7 @@ class SingleCity extends React.Component {
                     ))}
                 </Row>
             </div>
-            : "Click button!"
+            : ""
 
         return (
             <div className="feature-container">{textin}</div>
