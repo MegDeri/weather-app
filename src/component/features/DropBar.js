@@ -8,7 +8,7 @@ const DropBar = (props) => {
   const toggle = () => setDropdownOpen(prevState => !prevState);
 
   return (
-    <div className="feature-container">
+    <div className="feature-container1">
       <Dropdown isOpen={dropdownOpen} toggle={toggle}>
         <DropdownToggle caret>
           Kaikki kaupungit!

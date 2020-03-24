@@ -1,8 +1,11 @@
+@import "../../styles/settings.scss";
+
 .main {
-  color: #001100;
+  color: $color-text2;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   min-height: 50px;
-  background-color: #f8f9fa;
+  background-color: $color-background2;
+  min-height: 100vh;
 }

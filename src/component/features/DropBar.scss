@@ -1,14 +1,14 @@
 @import "../../styles/settings.scss";
 
-.feature-container {
+.feature-container1 {
     justify-content: center;
     padding: 15px 20px;
 }
 
 .btn-secondary {
     color: #000;
-    background-color: #fff;
-    border-color: #e6e6e6;
+    background-color: $color-text-bright;
+    border-color: $color-border-grey;
     width: 100%;
     text-align: left;
 }
