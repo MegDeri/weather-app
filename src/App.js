@@ -87,7 +87,8 @@ class App extends React.Component {
     return (
       <MainLayout>
         <div className="App">Hello!</div>
-        <DropBar getWeather={this.getWeather} />
+        <DropBar
+          getWeather={this.getWeather} />
         <SingleCity
           temp={this.state.temp}
           city={this.state.city}
