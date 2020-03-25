@@ -12,7 +12,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       cityId: '',
-      multi: '',
       temp: '',
       city: '',
       icon: '',
@@ -21,6 +20,7 @@ class App extends React.Component {
       wind: '',
       humidity: '',
       hours: [],
+      allcities: [],
     }
   }
 
@@ -83,11 +83,43 @@ class App extends React.Component {
     })
   };
 
+  getWeatherAll = () => {
+    let newArr = [];
+    const urls = [
+      `http://api.openweathermap.org/data/2.5/forecast?id=658225&appid=${API_KEY}&units=metric`,
+      `http://api.openweathermap.org/data/2.5/forecast?id=655195&appid=${API_KEY}&units=metric`,
+      `http://api.openweathermap.org/data/2.5/forecast?id=650225&appid=${API_KEY}&units=metric`,
+      `http://api.openweathermap.org/data/2.5/forecast?id=634964&appid=${API_KEY}&units=metric`
+    ];
+    const requests = urls.map(url => fetch(url).then(res => res.json()));
+    this.setState({
+      temp: '',
+      city: '',
+      icon: '',
+      description: '',
+      time: '',
+      wind: '',
+      humidity: '',
+      hours: [],
+      cityId: ''
+    });
+    Promise.all(requests)
+      .then(data => {
+        console.log(data);
+        newArr.push(data);
+        this.setState({
+          allcities: [].concat(...newArr)
+        });
+      })
+  };
+
   render() {
     return (
       <MainLayout>
         <DropBar
-          getWeather={this.getWeather} />
+          getWeather={this.getWeather}
+          getWeatherAll={this.getWeatherAll}
+        />
         <SingleCity
           temp={this.state.temp}
           city={this.state.city}
