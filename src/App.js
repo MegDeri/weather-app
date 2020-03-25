@@ -3,8 +3,9 @@ import "./App.scss";
 import { MainLayout } from "./component/layout/MainLayout";
 import DropBar from "./component/features/DropBar";
 import SingleCity from "./component/features/SingleCity"
-//658225,655195,650225,634964&units=metric, group
-//fetch(`http://api.openweathermap.org/data/2.5/forecast?id=658225`) http://api.openweathermap.org/data/2.5/${this.state.multi}?id=${this.state.cityId}&appid=${API_KEY}&units=metric
+import CitiesList from "./component/features/CitiesList";
+
+
 const API_KEY = "844e5ccfa57fee902cb9b1e8599d046a";
 
 class App extends React.Component {
@@ -20,14 +21,14 @@ class App extends React.Component {
       wind: '',
       humidity: '',
       hours: [],
-      allcities: [],
+      allCities: [],
     }
   }
 
   getWeather = ({ currentTarget }) => {
     this.setState({
       cityId: currentTarget.id,
-      multi: currentTarget.value
+      allCities: []
     }, () => {
       fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${this.state.cityId}&appid=${API_KEY}&units=metric`)
         .then(res => res.json())
@@ -84,7 +85,7 @@ class App extends React.Component {
   };
 
   getWeatherAll = () => {
-    let newArr = [];
+    const newArr = [];
     const urls = [
       `http://api.openweathermap.org/data/2.5/forecast?id=658225&appid=${API_KEY}&units=metric`,
       `http://api.openweathermap.org/data/2.5/forecast?id=655195&appid=${API_KEY}&units=metric`,
@@ -101,15 +102,17 @@ class App extends React.Component {
       wind: '',
       humidity: '',
       hours: [],
-      cityId: ''
+      cityId: '',
+      allCities: []
     });
     Promise.all(requests)
       .then(data => {
         console.log(data);
         newArr.push(data);
         this.setState({
-          allcities: [].concat(...newArr)
+          allCities: this.state.allCities.concat(...newArr)
         });
+        console.log(this.state.allCities)
       })
   };
 
@@ -129,7 +132,9 @@ class App extends React.Component {
           wind={this.state.wind}
           humidity={this.state.humidity}
           hours={this.state.hours}
+          allCities={this.state.allCities}
         />
+        <CitiesList allCities={this.state.allCities} />
       </MainLayout>
     );
   }

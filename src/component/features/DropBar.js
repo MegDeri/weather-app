@@ -14,17 +14,11 @@ const DropBar = (props) => {
           Kaikki kaupungit!
         </DropdownToggle>
         <DropdownMenu right>
-          <DropdownItem
-            id="658225,655195,650225,634964&units=metric"
-            value="group"
-            onClick={props.getWeatherAll}
-          >
-            Kaikki kaupungit!
-          </DropdownItem>
-          <DropdownItem id="634964" onClick={props.getWeather}>Tampere</DropdownItem>
-          <DropdownItem id="658225" onClick={props.getWeather}>Helsinki</DropdownItem>
-          <DropdownItem id="655195" onClick={props.getWeather}>Jyvaskila</DropdownItem>
-          <DropdownItem id="650225" onClick={props.getWeather}>Kuopio</DropdownItem>
+          <DropdownItem onClick={props.getWeatherAll}> Kaikki kaupungit </DropdownItem>
+          <DropdownItem id="634964" onClick={props.getWeather}> Tampere </DropdownItem>
+          <DropdownItem id="658225" onClick={props.getWeather}> Helsinki </DropdownItem>
+          <DropdownItem id="655195" onClick={props.getWeather}> Jyvaskila </DropdownItem>
+          <DropdownItem id="650225" onClick={props.getWeather}> Kuopio </DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </div>
