@@ -22,4 +22,3 @@ class CitiesList extends React.Component {
 }
 
 export default CitiesList;
-

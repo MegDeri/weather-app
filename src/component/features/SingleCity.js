@@ -60,4 +60,3 @@ class SingleCity extends React.Component {
 }
 
 export default SingleCity;
-

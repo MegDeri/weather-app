@@ -64,24 +64,3 @@ class City extends React.Component {
 }
 
 export default City;
-
-
-// return (
-//     <div key={uuid()}>ola
-//         <p>{city.name}</p>
-//         <p>{list[0].main.temp}</p>
-//         <p>{list[0].weather[0].description}</p>
-//         <p>{list[0].dt_txt}</p>
-//         <p>{list[0].wind.speed}</p>
-//         <p>{list[0].main.humidity}</p>
-//         <p>{list[0].weather[0].icon}</p>
-
-//     </div>
-
-// <Row className="hour">
-                //     {hours.map((hour, index) => (
-                //         <HourWeather key={index} {...hour} />
-                //     ))}
-                // </Row>
-
-// )
