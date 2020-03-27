@@ -20,8 +20,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Process of creation
 - This project was bootstrapped with Create React App
 - I used ```create-react-app``` to generate the app, then I ejected it in order to add a few additional features to the build process.
-- I've added sass-loader to webpack to use SASS instead of regular CSS.
+- I've added ```sass-loader``` to webpack to use ```SASS``` instead of regular ```CSS```.
 - The app follows a modular architecture to organize the different components.
-- I use the ES6 (...and more) syntax as much as possible.
+- I use the ```ES6``` (...and more) syntax as much as possible.
 - I don't use Redux because it's not needed for such a small app.
 
