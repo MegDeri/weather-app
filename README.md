@@ -14,12 +14,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Run
 - Clone the repository
-- Run npm install from inside the repository
-- Run npm start. Your default browser will automatically opens with the app. You can also access it from http://localhost:3000/
+- Run ```npm install``` from inside the repository
+- Run ```npm start```. Your default browser will automatically opens with the app. You can also access it from http://localhost:3000/
 
 ### Process of creation
 - This project was bootstrapped with Create React App
-- I used create-react-app to generate the app, then I ejected it in order to add a few additional features to the build process.
+- I used ```create-react-app``` to generate the app, then I ejected it in order to add a few additional features to the build process.
 - I've added sass-loader to webpack to use SASS instead of regular CSS.
 - The app follows a modular architecture to organize the different components.
 - I use the ES6 (...and more) syntax as much as possible.
