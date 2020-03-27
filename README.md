@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple App based on OpenWeatherMap's API link: https://openweathermap.org/
 
 ## DEMO
 ![demo-app-image](src/images/weather-app.png)
@@ -16,6 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Clone the repository
 - Run ```npm install``` from inside the repository
 - Run ```npm start```. Your default browser will automatically opens with the app. You can also access it from http://localhost:3000/
+- Register to ```https://openweathermap.org/``` to get API key and replace variable ```API_KEY``` found in ```App.js``` to your personal key.
 
 ### Process of creation
 - This project was bootstrapped with Create React App
