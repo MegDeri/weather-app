@@ -4,9 +4,9 @@ import { MainLayout } from "./component/layout/MainLayout";
 import DropBar from "./component/features/DropBar";
 import SingleCity from "./component/features/SingleCity"
 import CitiesList from "./component/features/CitiesList";
+import { API_KEY } from "./config";
 
 
-const API_KEY = "844e5ccfa57fee902cb9b1e8599d046a";
 
 class App extends React.Component {
   constructor(props) {
