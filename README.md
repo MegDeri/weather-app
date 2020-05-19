@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Simple App based on OpenWeatherMap's API link: https://openweathermap.org/
-## https://megderi.github.io/weather-app/
+
 ## DEMO
 ![demo-app-image](src/images/weather-app.png)
 
