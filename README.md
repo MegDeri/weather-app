@@ -2,7 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Simple App based on OpenWeatherMap's API link: https://openweathermap.org/
 
 ## DEMO
-![demo-app-image](src/images/weather-app.png)
+
+
 
 ### `npm start`
 
